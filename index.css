@@ -1,0 +1,9 @@
+h1{
+    color:cornflowerblue;
+}
+body{
+    height: 100vh;
+    background-color:hsl(208, 100%, 97%);
+    margin: 10px;
+
+}
