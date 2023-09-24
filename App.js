@@ -1,3 +1,6 @@
+import React from "react"
+import ReactDOM from "react-dom/client";
+
 //Using Vanilla JS
 const heading = document.createElement("h1");
 heading.innerText = "I am created with Vanilla JS dynamically";
