@@ -1,31 +1,33 @@
 import React from "react"
 import ReactDOM from "react-dom/client";
+import Headings from "./src/Headings";
+import Header from "./src/Header";
 
-//Using Vanilla JS
-const heading = document.createElement("h1");
-heading.innerText = "I am created with Vanilla JS dynamically";
-heading.className="headingJS";
-document.body.append(heading);
-
-//React Element creation 
-const element = React.createElement(
+// React Element using createElement
+const headingUsingCreateElement = React.createElement(
   "div",
-  {id:"parent"},
+  {className:"title"},
   [
-    React.createElement(
-      "h1",
-      { id: "child1" },
-      "child1 with Reactjs"
-    ),
-    React.createElement(
-      "h1",
-      { id: "child2" },
-      "child2 with Reactjs"
-    )
-  ]
+  React.createElement("h1",{},"Namaste React"),
+  React.createElement("h2",{},"A beginner-friendly crash course"),
+  React.createElement("h3",{},"by Akshay Saini")
+]);
+
+// React Element using Jsx
+const headingUsingJsx = <div className="title">
+  <h1>Namaste React</h1>
+  <h2>A beginner-friendly crash course</h2>
+  <h3>by Akshay Saini</h3>
+</div>
+
+//Main Component
+const Body = () => (
+  <div id="body">
+    <Header />
+    <Headings />
+  </div>
+
 );
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(element);
+root.render(<Body />);
 
-// In this my react element is printed first then vanilla js one

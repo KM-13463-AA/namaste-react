@@ -1,9 +1,30 @@
-h1{
+.title{
     color:cornflowerblue;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-body{
+#body{
     height: 100vh;
     background-color:hsl(208, 100%, 97%);
     margin: 10px;
-
+}
+img{
+    height: 100px;
+    width: 100px;
+}
+.Navbar{
+    background-color:white;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 3fr 5fr 4fr;
+    align-items: center;
+}
+#btnPanel > li{
+    font-size: 22px;
+    display: inline;
+    margin-left: 30px;
+    list-style: none;
 }
