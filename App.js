@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom/client";
-import resObj from "./utils/mockData"
+import resObj from "./src/utils/mockData"
 const Header = () => {
     return (
       <div className="header">
@@ -25,7 +25,7 @@ const RestaurantCard = (props) => {
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img className="res-logo" alt="res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId}/>
-      <h4 id="resName">{name}</h4>
+      <h3>{name}</h3>
       <h5>{cuisines.join(", ")}</h5>
       <h5>{avgRating} stars</h5>
       <h5>{costForTwo}</h5>
