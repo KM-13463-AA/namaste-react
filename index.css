@@ -1,30 +1,49 @@
-.title{
-    color:cornflowerblue;
-    min-height: 500px;
+.header{
+    display:flex;
+    justify-content:space-between;
+    background-color: antiquewhite;
+}
+.logo{
+    height: 100px;
+    width:130px;
+    margin:5px;
+}
+.nav-items>ul{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#body{
-    height: 100vh;
-    background-color:hsl(208, 100%, 97%);
-    margin: 10px;
-}
-img{
-    height: 100px;
-    width: 100px;
-}
-.Navbar{
-    background-color:white;
-    height: 100px;
-    display: grid;
-    grid-template-columns: 3fr 5fr 4fr;
-    align-items: center;
-}
-#btnPanel > li{
-    font-size: 22px;
-    display: inline;
-    margin-left: 30px;
     list-style: none;
 }
+li{
+    margin: 10px;
+    padding: 10px;
+    font-size: 24px;
+}
+.nav-items{
+    padding:0px 20px;
+}
+
+.res-card{
+    width: 195px;
+    padding: 8px;
+    margin: 8px;
+    color: black;
+}
+
+.res-card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.res-logo{
+    width:100%;
+    height:180px;
+    margin-bottom: 5px;
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#resName{
+    color: goldenrod;
+}
+
