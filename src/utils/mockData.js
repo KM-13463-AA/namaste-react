@@ -1,4 +1,4 @@
-const resObj =[
+const resList =[
     {
       "info": {
         "id": "43836",
@@ -2426,4 +2426,4 @@ const resObj =[
     }
   ];
 
-  export default resObj;
+  export default resList;
