@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/KM-13463-AA/namaste-react#readme",
   "devDependencies": {
+    "@types/react": "^18.2.30",
     "parcel": "^2.9.3",
     "process": "^0.11.10"
   },
