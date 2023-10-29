@@ -39,8 +39,8 @@
  5. Destructuring: It makes extraction of data from objecta and arrays easier.
 
 ## How to write comment in jsx?
- Single line comment: {/* A JSX comment */}
- Multi line comment:  {/* 
+ Single line comment: {/** A JSX comment */}
+ Multi line comment:  {/**
                        Multi
                        line
                        comment
