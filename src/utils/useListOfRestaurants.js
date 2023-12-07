@@ -20,5 +20,6 @@ const useListOfRestaurants = () => {
     return [listOfRestaurants , setlistOfRestaurants, filteredRestaurants, setfilteredRestaurants];
 }
 
+
 export default useListOfRestaurants;
 
