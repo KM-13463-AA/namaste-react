@@ -14,7 +14,7 @@ const Body = () => {
 
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body bg-yellow-50">
-            <div className="filter flex items-center">
+            <div className="bodyTop flex items-center">
                 <div className= "search m-2 p-2">
                     <input type="text" className="search-txt border" value={searchText} onChange={ (e) => {
                         // console.log(e);
@@ -39,7 +39,7 @@ const Body = () => {
                         Top rated restaurant
                     </button>
                 </div>
-                <div className= "search m-2 p-2">
+                <div className= "userNameInput m-2 p-2">
                     <input type="text" className="search-txt border"onChange={ (e) => {
                         setUserName(e.target.value);
                     }}>

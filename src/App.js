@@ -30,7 +30,6 @@ const AppLayout =() => {
                 <Outlet />
             </div>
         </UserContext.Provider>
-
     );
 };
 
