@@ -80,3 +80,40 @@ function MyComponent() {
  4. Tool Dependency: Some code splitting implementations are tied to specific build tools or bundlers, switching between bundlers might require adjustments to code splitting strategy.
  5. Risk of Over-Splitting: Over splitting is possible negating the benefits of splitting
  6. Potential for Cumulative Loading Delays
+
+## Suspense
+ Within a single Suspense component, we can place one or more lazy components. You can also place multiple Suspense wrappers, and the one closest to a lazy component will be used.
+ e.g.,<Suspense fallback={<MainLoader />}>
+        <Suspense fallback={<SideContentLoader />}>
+          <SideContent />
+        </Suspense>
+        <MainContent />
+        <Suspense fallback={<CommentsLoader />}>
+          <Comments />
+        </Suspense>
+      </Suspense>
+      Here if the main <MainContent /> is ready to load it won't wait for other two to load. However other two have to wait until <MainContent /> is loaded.
+ 
+ Improvements for Suspense in React 18:
+ 1. Server side rendering: We can use Suspense to handle loading states for both lazy and non-lazy components seamlessly.
+ 2. startTransition API:When switching between tab views, it might be undesirable to show the loader again if the user has already seen the content. startTransition can be used to avoid this by marking non-urgent UI updates as transitions.
+ 
+ e.g.,1.
+    const [isPending, startTransition] = useTransition();
+      function handleClick() {
+        startTransition(() => {
+          setTab('football');
+        });
+      }
+      <Suspense fallback={<Loader/>}>
+        <div style={{ opacity: isPending ? 0.8 : 1 }}>
+          {tab === 'cricket' ? <Cricket /> : <Football />}
+        </div>
+      </Suspense>
+
+ e.g.,2.
+  When we first load a page (e.g., Homefeed), using suspense, we might have to wait for data to be fetched. So, suspense will display a fallback while data is being loaded.
+  Now when we navigate from one page to another after initial load we've 2 possiblities:
+  1. Without startTransition: Without startTransition, React might replace the existing UI (e.g., Homefeed) with a loading spinner when transitioning to the new page (e.g., Profile).
+  2. With startTransition:If we navigate from Homefeed to Profile, startTransition prevents showing a loading spinner again on the Homefeed page. Instead, it keeps showing the Homefeed until the Profile data is ready.
+  Bcz startTransition only avoids retriggering Suspense boundaries, new Suspense boundaries will still be shown. This is because we don't want to make users wait until we've fetched all new data to see content.So in the example above, if you have a Suspense boundary around your friends list in the Profile page, users can view the rest of the page while the friends list loads.
